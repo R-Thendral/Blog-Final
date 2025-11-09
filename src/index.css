@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌈 GLOBAL BACKGROUND - Full-Page Vibrant Animated Gradient */
+body {
+  @apply min-h-screen text-gray-800 font-sans antialiased overflow-x-hidden;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,     /* vibrant purple */
+    #764ba2 15%,    /* deep purple */
+    #f093fb 30%,    /* bright pink */
+    #4facfe 50%,    /* sky blue */
+    #00f2fe 70%,    /* cyan */
+    #43e97b 85%,    /* green */
+    #38f9d7 100%    /* turquoise */
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ✨ Smooth animated gradient */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🧠 TYPOGRAPHY - Gradient Titles */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tight text-gray-900;
+  position: relative;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl mb-4;
+  background: linear-gradient(135deg, #f093fb 0%, #4facfe 50%, #43e97b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
+}
+
+h2 {
+  @apply text-2xl md:text-3xl mb-3;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🧭 NAVBAR - Floating Glass Effect */
+.navbar {
+  @apply sticky top-0 z-50 backdrop-blur-2xl border-b border-white/10;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+}
+
+.navbar a {
+  @apply px-4 py-2 font-medium text-white transition-all duration-300;
+  position: relative;
+}
+
+.navbar a:hover {
+  background: linear-gradient(135deg, #f093fb, #4facfe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🔘 BUTTONS - Neon Glow */
+button {
+  @apply text-white font-semibold px-6 py-3 rounded-xl shadow-2xl transition-all duration-300;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 25px rgba(240, 147, 251, 0.6);
+}
+
+button:focus {
+  @apply outline-none ring-4 ring-pink-300/50;
+}
+
+/* 📰 BLOG CARD - Transparent Glass Effect */
+.blog-card {
+  @apply relative rounded-3xl p-6 border overflow-hidden transition-all duration-300;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(31, 38, 135, 0.25);
+}
+
+.blog-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+}
+
+.blog-card img {
+  @apply w-full h-56 object-cover rounded-2xl mb-4;
+  opacity: 0.95;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.blog-card:hover img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* 💬 COMMENT SECTION */
+.comment-section {
+  @apply rounded-3xl p-8 shadow-2xl;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ✏️ INPUTS */
+input, textarea, select {
+  @apply w-full px-5 py-3 rounded-xl text-gray-800 transition-all duration-300;
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+input:focus, textarea:focus {
+  border-color: #f093fb;
+  box-shadow: 0 0 20px rgba(240, 147, 251, 0.4);
+}
+
+/* 🧭 SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  border-radius: 10px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .blog-card { @apply p-4; }
+  h1 { @apply text-3xl; }
+}
